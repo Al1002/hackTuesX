@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://jnrm5wr70534"]
+[gd_scene load_steps=5 format=3 uid="uid://pygyx6cc2ads"]
 
-[ext_resource type="PackedScene" uid="uid://docuqjrxlkfo2" path="res://character_body.tscn" id="1_flr0v"]
+[ext_resource type="PackedScene" uid="uid://d0ujtemte453e" path="res://character_body.tscn" id="1_flr0v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_atxmj"]
 size = Vector3(60, 1, 60)
@@ -14,7 +14,6 @@ size = Vector3(60, 1, 60)
 [node name="Ground" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_atxmj")
 metadata/_edit_lock_ = true
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://docuqjrxlkfo2"]
+[gd_scene load_steps=5 format=3 uid="uid://d0ujtemte453e"]
 
 [ext_resource type="Script" path="res://character_body.gd" id="1_r8e6a"]
+[ext_resource type="AudioStream" uid="uid://vq4l2h2mapqb" path="res://jump_splash.wav" id="2_youuh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xu45o"]
 
@@ -14,3 +15,7 @@ shape = SubResource("CapsuleShape3D_xu45o")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_2jntw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_youuh")
+mix_target = 2
