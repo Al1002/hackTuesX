@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://vfximlkci2x1"]
+
+[ext_resource type="Texture2D" uid="uid://b2awuac2wsa4h" path="res://icon.svg" id="1_cboor"]
+[ext_resource type="Script" path="res://fish.gd" id="1_ox1ku"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m17eh"]
+albedo_texture = ExtResource("1_cboor")
+
+[sub_resource type="QuadMesh" id="QuadMesh_a0e8y"]
+material = SubResource("StandardMaterial3D_m17eh")
+
+[node name="fish" type="Node3D"]
+script = ExtResource("1_ox1ku")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_a0e8y")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

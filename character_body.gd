@@ -7,6 +7,7 @@ const JUMP_VELOCITY = 4.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+
 @onready var spring_arm = $SpringArm3D
 @onready var jump_audio = $AudioStreamPlayer
 
@@ -44,3 +45,4 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	pass
