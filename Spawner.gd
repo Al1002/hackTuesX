@@ -2,11 +2,11 @@ extends Node3D
 
 @export var spawning_scene : PackedScene
 var spawnPoint : Vector3
-var spawnRadius : float = 50
-var rotationSpeed : float = 100
+var spawnRadius : float = 60
+var rotationSpeed : float = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Timer.wait_time = 1
+	$Timer.wait_time = 0.5
 	$Timer.autostart = true
 	$Timer.start()
 	spawnPoint = position
@@ -20,7 +20,7 @@ func spawn():
 	var radians = deg_to_rad(angle)
 	var xOffset = spawnPoint.x + spawnRadius * cos(radians)
 	var zOffset = spawnPoint.z + spawnRadius * sin(radians)
-	spawned.position = Vector3(xOffset, randf_range(-1,1), zOffset)
+	spawned.position = Vector3(xOffset, randf_range(-1,10), zOffset)
 	
 	# Add fish to the scene
 	add_child(spawned)
@@ -28,7 +28,7 @@ func spawn():
 func _process(delta):
 	for child in get_children():
 		if child is Timer:
-			break
+			continue
 		var pos = child.position - spawnPoint
 		var new_pos = Vector3(pos.x * cos(rotationSpeed * delta) - pos.z * sin(rotationSpeed * delta),pos.y, pos.x * sin(rotationSpeed * delta) + pos.z * cos(rotationSpeed * delta))
 		child.position = spawnPoint + new_pos

@@ -18,10 +18,10 @@ func _ready():
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
-		rotation.x -= event.relative.y * mouse_sensitivity
-		rotation.y -= event.relative.x * mouse_sensitivity
-		rotation_degrees.x = clamp(rotation_degrees.x, -30.0, 30.0)
-		spring_arm.rotation_degrees.x = rotation_degrees.x
+		$MeshInstance3D.rotation_degrees.x -= event.relative.y * mouse_sensitivity
+		$MeshInstance3D.rotation.y -= event.relative.x * mouse_sensitivity
+		$MeshInstance3D.rotation_degrees.x = clamp($MeshInstance3D.rotation_degrees.x, -30.0, 30.0)
+		spring_arm.rotation_degrees.x = $MeshInstance3D.rotation_degrees.x * 2
 
 func _physics_process(delta):
 	# Add the gravity.
