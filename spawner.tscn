@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkat5k613bn6i"]
+[gd_scene load_steps=3 format=3 uid="uid://c1o3828o7efky"]
 
 [ext_resource type="Script" path="res://Spawner.gd" id="1_422s0"]
-[ext_resource type="PackedScene" uid="uid://vfximlkci2x1" path="res://fish.tscn" id="2_xwnnp"]
+[ext_resource type="PackedScene" uid="uid://osn10bktsdmf" path="res://fish.tscn" id="2_xwnnp"]
 
 [node name="Spawner" type="Node3D"]
 script = ExtResource("1_422s0")
