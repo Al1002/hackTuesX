@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dhlbpecsb1daq"
+path="res://.godot/imported/Boulder3.obj-d8e3e559e37d56e138c29c7554daaf39.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Boulder3.obj-d8e3e559e37d56e138c29c7554daaf39.mesh"]
+
+source_file="res://assets/runes/Boulder3.obj"
+dest_files=["res://.godot/imported/Boulder3.obj-d8e3e559e37d56e138c29c7554daaf39.mesh", "res://.godot/imported/Boulder3.obj-d8e3e559e37d56e138c29c7554daaf39.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

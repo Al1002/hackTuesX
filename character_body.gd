@@ -22,7 +22,6 @@ func _unhandled_input(event):
 		rotation.y -= event.relative.x * mouse_sensitivity
 		rotation_degrees.x = clamp(rotation_degrees.x, -30.0, 30.0)
 		spring_arm.rotation_degrees.x = rotation_degrees.x
-		
 
 
 func _physics_process(delta):
@@ -33,6 +32,7 @@ func _physics_process(delta):
 	
 	if is_on_floor():
 		$SandParticleSystem.emitting = true
+
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump"):

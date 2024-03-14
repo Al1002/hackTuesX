@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b7jrynjshmlrh"
+path="res://.godot/imported/ColumnSectiColumnSection2.obj-92befebfae4b5889a7b84319ce98b56b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ColumnSectiColumnSection2.obj-92befebfae4b5889a7b84319ce98b56b.mesh"]
+
+source_file="res://assets/runes/ColumnSectiColumnSection2.obj"
+dest_files=["res://.godot/imported/ColumnSectiColumnSection2.obj-92befebfae4b5889a7b84319ce98b56b.mesh", "res://.godot/imported/ColumnSectiColumnSection2.obj-92befebfae4b5889a7b84319ce98b56b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
