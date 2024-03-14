@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bbhnfq6tbhh2b"
+path="res://.godot/imported/CircleBlock13.obj-13031a56d636e2a4dcfb68b8d79c6965.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CircleBlock13.obj-13031a56d636e2a4dcfb68b8d79c6965.mesh"]
+
+source_file="res://assets/runes/CircleBlock13.obj"
+dest_files=["res://.godot/imported/CircleBlock13.obj-13031a56d636e2a4dcfb68b8d79c6965.mesh", "res://.godot/imported/CircleBlock13.obj-13031a56d636e2a4dcfb68b8d79c6965.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
