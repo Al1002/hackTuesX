@@ -13,13 +13,14 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var mouse_sensitivity = 0.0015
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
-		spring_arm.rotation.x -= event.relative.y * mouse_sensitivity
-		spring_arm.rotation_degrees.x = clamp(spring_arm.rotation_degrees.x, -90.0, 30.0)
-		spring_arm.rotation.y -= event.relative.x * mouse_sensitivity
+		rotation.x -= event.relative.y * mouse_sensitivity
+		rotation.y -= event.relative.x * mouse_sensitivity
+		rotation_degrees.x = clamp(rotation_degrees.x, -30.0, 30.0)
+		spring_arm.rotation_degrees.x = rotation_degrees.x
 
 func _physics_process(delta):
 	# Add the gravity.
