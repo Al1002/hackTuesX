@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b3uo2u3gtein2"
+path="res://.godot/imported/BrokenBlock4.obj-42a36112bb24021827a33dca5eb2c15d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/BrokenBlock4.obj-42a36112bb24021827a33dca5eb2c15d.mesh"]
+
+source_file="res://assets/runes/BrokenBlock4.obj"
+dest_files=["res://.godot/imported/BrokenBlock4.obj-42a36112bb24021827a33dca5eb2c15d.mesh", "res://.godot/imported/BrokenBlock4.obj-42a36112bb24021827a33dca5eb2c15d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
