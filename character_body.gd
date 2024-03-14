@@ -10,6 +10,9 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var spring_arm = $SpringArm3D
 @export var mouse_sensitivity = 0.0015
 
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		spring_arm.rotation.x -= event.relative.y * mouse_sensitivity
@@ -22,7 +25,7 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump"):
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
