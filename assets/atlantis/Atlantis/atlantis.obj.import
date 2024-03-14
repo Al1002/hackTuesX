@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cbmappwlt7ifk"
+path="res://.godot/imported/atlantis.obj-5acaecc3ee415d19a34469a37149cacc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/atlantis.obj-5acaecc3ee415d19a34469a37149cacc.mesh"]
+
+source_file="res://assets/atlantis/Atlantis/atlantis.obj"
+dest_files=["res://.godot/imported/atlantis.obj-5acaecc3ee415d19a34469a37149cacc.mesh", "res://.godot/imported/atlantis.obj-5acaecc3ee415d19a34469a37149cacc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
