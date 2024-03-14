@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://pygyx6cc2ads"]
+[gd_scene load_steps=5 format=3 uid="uid://bsod22qsae4fr"]
 
-[ext_resource type="PackedScene" uid="uid://d0ujtemte453e" path="res://character_body.tscn" id="1_flr0v"]
+[ext_resource type="PackedScene" uid="uid://cepjwdnob3o6l" path="res://character_body.tscn" id="1_flr0v"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_atxmj"]
-size = Vector3(60, 1, 60)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_a5rpt"]
+radius = 30.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_5y26m"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_hh17p"]
+top_radius = 30.0
+bottom_radius = 15.0
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_vp2ws"]
 
@@ -14,19 +16,18 @@ size = Vector3(60, 1, 60)
 [node name="Ground" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
-shape = SubResource("BoxShape3D_atxmj")
+shape = SubResource("CylinderShape3D_a5rpt")
 metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(60, 0, 0, 0, 1, 0, 0, 0, 60, 0, 0, 0)
-mesh = SubResource("BoxMesh_5y26m")
+mesh = SubResource("CylinderMesh_hh17p")
 metadata/_edit_lock_ = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-1, -7.84408e-08, -3.85977e-08, 0, -0.441506, 0.897258, -8.74228e-08, 0.897258, 0.441506, 0, 0, 0)
 
 [node name="Player_character" parent="." instance=ExtResource("1_flr0v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.06043, 0)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="Player_character"]
 transform = Transform3D(1, 0, 0, 0, 0.998924, 0.0463742, 0, -0.0463742, 0.998924, 0, 0, 0)
