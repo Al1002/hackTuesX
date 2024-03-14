@@ -7,6 +7,14 @@ const JUMP_VELOCITY = 4.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+@onready var spring_arm = $SpringArm3D
+@export var mouse_sensitivity = 0.0015
+
+func _unhandled_input(event):
+	if event is InputEventMouseMotion:
+		spring_arm.rotation.x -= event.relative.y * mouse_sensitivity
+		spring_arm.rotation_degrees.x = clamp(spring_arm.rotation_degrees.x, -90.0, 30.0)
+		spring_arm.rotation.y -= event.relative.x * mouse_sensitivity
 
 func _physics_process(delta):
 	# Add the gravity.

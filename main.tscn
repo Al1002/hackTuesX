@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://jnrm5wr70534"]
+[gd_scene load_steps=5 format=3 uid="uid://jnrm5wr70534"]
 
 [ext_resource type="PackedScene" uid="uid://docuqjrxlkfo2" path="res://character_body.tscn" id="1_flr0v"]
 
@@ -6,6 +6,8 @@
 size = Vector3(60, 1, 60)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5y26m"]
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_vp2ws"]
 
 [node name="Main" type="Node"]
 
@@ -27,5 +29,10 @@ transform = Transform3D(-1, -7.84408e-08, -3.85977e-08, 0, -0.441506, 0.897258, 
 [node name="Player_character" parent="." instance=ExtResource("1_flr0v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.90612, 2.39997)
+[node name="SpringArm3D" type="SpringArm3D" parent="Player_character"]
+transform = Transform3D(1, 0, 0, 0, 0.998924, 0.0463742, 0, -0.0463742, 0.998924, 0, 0, 0)
+shape = SubResource("SeparationRayShape3D_vp2ws")
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="Player_character/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38419e-07, -0.0459095, 2.95023)
