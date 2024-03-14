@@ -30,7 +30,7 @@ func _process(delta):
 		if child is Timer:
 			break
 		var pos = child.position - spawnPoint
-		var new_pos = Vector3(pos.x * cos(rotationSpeed * delta) - pos.z * sin(rotationSpeed * delta),pos.x * sin(rotationSpeed * delta) + pos.z * cos(rotationSpeed * delta),pos.y)
+		var new_pos = Vector3(pos.x * cos(rotationSpeed * delta) - pos.z * sin(rotationSpeed * delta),pos.y, pos.x * sin(rotationSpeed * delta) + pos.z * cos(rotationSpeed * delta))
 		child.position = spawnPoint + new_pos
 
 func _on_timer_timeout():
