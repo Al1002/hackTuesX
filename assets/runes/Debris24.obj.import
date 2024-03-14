@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://buayhwadoakm3"
+path="res://.godot/imported/Debris24.obj-1cc28767be5bd452c58e62e5bc3629a2.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Debris24.obj-1cc28767be5bd452c58e62e5bc3629a2.mesh"]
+
+source_file="res://assets/runes/Debris24.obj"
+dest_files=["res://.godot/imported/Debris24.obj-1cc28767be5bd452c58e62e5bc3629a2.mesh", "res://.godot/imported/Debris24.obj-1cc28767be5bd452c58e62e5bc3629a2.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

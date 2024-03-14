@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bfaovqsjpwiu4"
+path="res://.godot/imported/Rune3.obj-a4458818f6679f4074c5d74c4dff6e6e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Rune3.obj-a4458818f6679f4074c5d74c4dff6e6e.mesh"]
+
+source_file="res://assets/runes/Rune3.obj"
+dest_files=["res://.godot/imported/Rune3.obj-a4458818f6679f4074c5d74c4dff6e6e.mesh", "res://.godot/imported/Rune3.obj-a4458818f6679f4074c5d74c4dff6e6e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
