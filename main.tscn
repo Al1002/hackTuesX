@@ -1,12 +1,16 @@
-[gd_scene load_steps=19 format=3 uid="uid://pygyx6cc2ads"]
+[gd_scene load_steps=23 format=3 uid="uid://pygyx6cc2ads"]
 
 [ext_resource type="Texture2D" uid="uid://dwsniss71hd03" path="res://example/boujie_water_shader/Sand.png" id="1_eahax"]
-[ext_resource type="PackedScene" path="res://character_body.tscn" id="1_flr0v"]
+[ext_resource type="PackedScene" uid="uid://cmdf4gsnq1fj" path="res://character_body.tscn" id="1_flr0v"]
 [ext_resource type="Script" path="res://example/boujie_water_shader/ocean_floor.gd" id="1_vgk56"]
 [ext_resource type="PackedScene" uid="uid://ignpdv10rx52" path="res://addons/boujie_water_shader/prefabs/deep_ocean.tscn" id="2_ssu6k"]
 [ext_resource type="Shader" path="res://example/boujie_water_shader/DropWithDistance.gdshader" id="3_soxpm"]
+[ext_resource type="AudioStream" path="res://sfx/surfacing.wav" id="6_cil0t"]
 [ext_resource type="Script" path="res://example/boujie_water_shader/underwater_fog.gd" id="6_l08iw"]
 [ext_resource type="Environment" uid="uid://kw5c7bat248e" path="res://example/boujie_water_shader/MapEnvironment.tres" id="6_svxmi"]
+[ext_resource type="AudioStream" uid="uid://m41u4qsw3rpe" path="res://sfx/AmbientWaters.wav" id="8_argd0"]
+[ext_resource type="Script" path="res://AmbiencePlay.gd" id="12_ed63h"]
+[ext_resource type="AudioStream" path="res://sfx/sand-and-wind-atmo-24424.mp3" id="14_05wqs"]
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_vp2ws"]
 
@@ -108,6 +112,9 @@ scale_amount_min = 0.1
 scale_amount_max = 0.3
 scale_amount_curve = SubResource("Curve_1vvw5")
 
+[node name="SurfacingSound" type="AudioStreamPlayer" parent="Player_character"]
+stream = ExtResource("6_cil0t")
+
 [node name="DeepOcean" parent="." instance=ExtResource("2_ssu6k")]
 transform = Transform3D(1, 0, 0, 0, 1.14258, 0, 0, 0, 1, 0, 0, 0)
 far_edge = 4000
@@ -143,5 +150,18 @@ shape = 4
 material = SubResource("FogMaterial_w216v")
 script = ExtResource("6_l08iw")
 visible_height_offset = 5.0
+
+[node name="AmbienceStuff" type="Node" parent="."]
+script = ExtResource("12_ed63h")
+
+[node name="Timer" type="Timer" parent="AmbienceStuff"]
+
+[node name="AmbientSound" type="AudioStreamPlayer" parent="AmbienceStuff"]
+stream = ExtResource("8_argd0")
+
+[node name="UnderwaterAmbience" type="AudioStreamPlayer" parent="AmbienceStuff"]
+stream = ExtResource("14_05wqs")
+
+[connection signal="timeout" from="AmbienceStuff/Timer" to="AmbienceStuff" method="_on_timer_timeout"]
 
 [editable path="DeepOcean"]
