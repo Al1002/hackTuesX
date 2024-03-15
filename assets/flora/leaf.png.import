@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk8ampa01sdwf"
-path="res://.godot/imported/blue_fish.png-6b0097077d71397e25777567f03e7750.ctex"
+uid="uid://dfwrsjyrty8b0"
+path="res://.godot/imported/leaf.png-7e212cd2fc035a5444e0b330a0281a51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fauna/blue_fish.png"
-dest_files=["res://.godot/imported/blue_fish.png-6b0097077d71397e25777567f03e7750.ctex"]
+source_file="res://assets/flora/leaf.png"
+dest_files=["res://.godot/imported/leaf.png-7e212cd2fc035a5444e0b330a0281a51.ctex"]
 
 [params]
 
