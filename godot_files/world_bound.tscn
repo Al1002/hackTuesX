@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://77qnjffqnygk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y4q0b"]
+size = Vector3(2000, 1, 2000)
+
+[node name="WorldBound" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_y4q0b")

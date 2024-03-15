@@ -1,0 +1,137 @@
+<<<<<<< HEAD:character_body.tscn
+<<<<<<< HEAD
+[gd_scene load_steps=7 format=3 uid="uid://cmdf4gsnq1fj"]
+
+[ext_resource type="Script" path="res://character_body.gd" id="1_r8e6a"]
+[ext_resource type="AudioStream" path="res://sfx/swimup.wav" id="2_tfqy0"]
+[ext_resource type="AudioStream" path="res://sfx/swim.wav" id="3_cgymt"]
+[ext_resource type="AudioStream" path="res://sfx/swim2.wav" id="4_lnqnv"]
+=======
+[gd_scene load_steps=15 format=3 uid="uid://cepjwdnob3o6l"]
+
+[ext_resource type="Script" path="res://character_body.gd" id="1_r8e6a"]
+[ext_resource type="AudioStream" uid="uid://vq4l2h2mapqb" path="res://jump_splash.wav" id="2_youuh"]
+[ext_resource type="Texture2D" uid="uid://dwsniss71hd03" path="res://example/boujie_water_shader/Sand.png" id="3_jwkiu"]
+[ext_resource type="PackedScene" uid="uid://c1o3828o7efky" path="res://spawner.tscn" id="4_1pb38"]
+[ext_resource type="PackedScene" uid="uid://hnedjlg4ildq" path="res://assets/character/character.glb" id="5_vcybb"]
+>>>>>>> alex
+=======
+[gd_scene load_steps=13 format=3 uid="uid://cepjwdnob3o6l"]
+
+[ext_resource type="Script" path="res://godot_files/character_body.gd" id="1_r8e6a"]
+[ext_resource type="Texture2D" uid="uid://dwsniss71hd03" path="res://example/boujie_water_shader/Sand.png" id="2_amdc7"]
+[ext_resource type="PackedScene" uid="uid://cmimtn3cx158f" path="res://godot_files/character.tscn" id="3_jwo0w"]
+>>>>>>> main:godot_files/character_body.tscn
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mmm2h"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_2jntw"]
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_r1etx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_562qw"]
+albedo_texture = ExtResource("2_amdc7")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ouqox"]
+material = SubResource("StandardMaterial3D_562qw")
+size = Vector3(0.025, 0.025, 0.025)
+
+[sub_resource type="Curve" id="Curve_nd8nc"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(1e-05, 200), 0.0, 0.0, 0, 0, Vector2(2e-05, 200), 0.0, 0.0, 0, 0, Vector2(3e-05, 200), 0.0, 0.0, 0, 0, Vector2(4e-05, 200), 0.0, 0.0, 0, 0, Vector2(5e-05, 200), 0.0, 0.0, 0, 0, Vector2(6e-05, 200), 0.0, 0.0, 0, 0, Vector2(7e-05, 200), 0.0, 0.0, 0, 0, Vector2(1, -200), 0.0, 0.0, 0, 0]
+point_count = 9
+
+[sub_resource type="Curve" id="Curve_v7wpe"]
+max_value = 100.0
+_data = [Vector2(0, 100), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="SphereMesh" id="SphereMesh_nf38b"]
+
+[sub_resource type="Curve" id="Curve_sjdtq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.225275, 0.431579), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Player_character" type="CharacterBody3D"]
+script = ExtResource("1_r8e6a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.511863, -0.232905)
+shape = SubResource("CapsuleShape3D_mmm2h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.487261, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_2jntw")
+
+<<<<<<< HEAD:character_body.tscn
+<<<<<<< HEAD
+[node name="SwimSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_tfqy0")
+
+[node name="SwimSound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_cgymt")
+
+[node name="SwimSound3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_lnqnv")
+=======
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_youuh")
+mix_target = 2
+=======
+[node name="SwimSound" type="AudioStreamPlayer" parent="."]
+
+[node name="SwimSound2" type="AudioStreamPlayer" parent="."]
+
+[node name="SwimSound3" type="AudioStreamPlayer" parent="."]
+>>>>>>> main:godot_files/character_body.tscn
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.998924, 0.0463742, 0, -0.0463742, 0.998924, 0, 0, 0)
+shape = SubResource("SeparationRayShape3D_r1etx")
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38419e-07, -0.0459095, 2.95023)
+
+[node name="SandParticleSystem" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0323478, -0.266356, -0.203893)
+amount = 20
+lifetime = 3.0
+randomness = 1.0
+lifetime_randomness = 1.0
+mesh = SubResource("BoxMesh_ouqox")
+direction = Vector3(0, 1, 0)
+spread = 90.0
+initial_velocity_min = 2.0
+initial_velocity_max = 10.0
+linear_accel_curve = SubResource("Curve_nd8nc")
+damping_curve = SubResource("Curve_v7wpe")
+scale_amount_max = 2.5
+
+[node name="BubbleParticleSystem" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33545, -0.314067)
+amount = 5
+lifetime = 4.0
+preprocess = 0.5
+randomness = 1.0
+mesh = SubResource("SphereMesh_nf38b")
+direction = Vector3(0, 1, 0)
+spread = 90.0
+gravity = Vector3(0, 0.33, 0)
+initial_velocity_min = 0.3
+initial_velocity_max = 2.0
+scale_amount_min = 0.1
+scale_amount_max = 0.3
+scale_amount_curve = SubResource("Curve_sjdtq")
+
+[node name="SurfacingSound" type="AudioStreamPlayer" parent="."]
+
+<<<<<<< HEAD:character_body.tscn
+[node name="character" parent="." instance=ExtResource("5_vcybb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.709611, 0.0768274)
+>>>>>>> alex
+=======
+[node name="character" parent="." instance=ExtResource("3_jwo0w")]
+>>>>>>> main:godot_files/character_body.tscn
