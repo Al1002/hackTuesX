@@ -103,8 +103,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -79.4791, 0)
 [node name="FishHandler" type="Node3D" parent="."]
 script = ExtResource("11_qiybj")
 scene = ExtResource("12_kjbfh")
-spawn_dist = 10.0
-group_dist = 2.0
+spawn_dist = 30.0
+group_dist = 5.0
 
 [connection signal="timeout" from="AmbienceStuff/Timer" to="AmbienceStuff" method="_on_timer_timeout"]
 
