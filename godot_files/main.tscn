@@ -11,11 +11,10 @@
 [ext_resource type="AudioStream" uid="uid://m41u4qsw3rpe" path="res://sfx/AmbientWaters.wav" id="9_3bfqq"]
 [ext_resource type="AudioStream" uid="uid://cwqljpa0cfydl" path="res://sfx/sand-and-wind-atmo-24424.mp3" id="10_kjxhv"]
 [ext_resource type="PackedScene" uid="uid://77qnjffqnygk" path="res://godot_files/world_bound.tscn" id="11_x6y3e"]
+[ext_resource type="PackedScene" uid="uid://b1t6bnt4o74in" path="res://godot_files/main_rock.tscn" id="12_68mlv"]
 [ext_resource type="PackedScene" uid="uid://8g4gb7yu028a" path="res://godot_files/relic.tscn" id="12_70ut1"]
-[ext_resource type="PackedScene" uid="uid://b1npuq7rhmm0w" path="res://godot_files/main_rock.tscn" id="12_a3naf"]
 [ext_resource type="Script" path="res://godot_files/TextLabel.gd" id="13_i4ohc"]
-[ext_resource type="AudioStream" uid="uid://2f8j243xoto7" path="res://sfx/AmbientWaters.wav" id="9_3bfqq"]
-[ext_resource type="ArrayMesh" uid="uid://dpnakr0b7lusn" path="res://assets/main rock.mtl.obj" id="11_uosv2"]
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_jlsb8"]
 size = Vector2(2000, 2000)
 subdivide_width = 16
@@ -99,10 +98,11 @@ stream = ExtResource("9_3bfqq")
 stream = ExtResource("10_kjxhv")
 volume_db = -15.0
 
-[node name="MainRock" parent="." instance=ExtResource("12_a3naf")]
-
 [node name="WorldBound" parent="." instance=ExtResource("11_x6y3e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.981819, 0)
+
+[node name="BigRock" parent="." instance=ExtResource("12_68mlv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -36.9589, 0)
 
 [node name="Relic" parent="." instance=ExtResource("12_70ut1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.565764, -14.4818, 0.288555)
