@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://da88vpluj1ii3"
+path="res://.godot/imported/Debris9.obj-514a101852583d461000e6959d2b2070.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Debris9.obj-514a101852583d461000e6959d2b2070.mesh"]
+
+source_file="res://assets/runes/Debris9.obj"
+dest_files=["res://.godot/imported/Debris9.obj-514a101852583d461000e6959d2b2070.mesh", "res://.godot/imported/Debris9.obj-514a101852583d461000e6959d2b2070.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

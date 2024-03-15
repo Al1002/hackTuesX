@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://laydm0trecbg"
+path="res://.godot/imported/ColumnHalf4.obj-b92a97da2f2717d442138379ef246829.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ColumnHalf4.obj-b92a97da2f2717d442138379ef246829.mesh"]
+
+source_file="res://assets/runes/ColumnHalf4.obj"
+dest_files=["res://.godot/imported/ColumnHalf4.obj-b92a97da2f2717d442138379ef246829.mesh", "res://.godot/imported/ColumnHalf4.obj-b92a97da2f2717d442138379ef246829.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

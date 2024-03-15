@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://catm3xifpaifj"
+path="res://.godot/imported/CircleBlock15.obj-007cde160f093766e136caa4a7f77e43.mesh"
+
+[deps]
+
+files=["res://.godot/imported/CircleBlock15.obj-007cde160f093766e136caa4a7f77e43.mesh"]
+
+source_file="res://assets/runes/CircleBlock15.obj"
+dest_files=["res://.godot/imported/CircleBlock15.obj-007cde160f093766e136caa4a7f77e43.mesh", "res://.godot/imported/CircleBlock15.obj-007cde160f093766e136caa4a7f77e43.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -15,6 +15,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	$BubbleParticleSystem.emitting = true
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -23,10 +24,16 @@ func _unhandled_input(event):
 		$MeshInstance3D.rotation_degrees.x = clamp($MeshInstance3D.rotation_degrees.x, -30.0, 30.0)
 		spring_arm.rotation_degrees.x = $MeshInstance3D.rotation_degrees.x * 2
 
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+		$SandParticleSystem.emitting = false
+	
+	if is_on_floor():
+		$SandParticleSystem.emitting = true
+
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump"):
@@ -45,4 +52,4 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
-	pass
+
