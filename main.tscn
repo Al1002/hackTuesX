@@ -78,9 +78,6 @@ spring_length = 5.0
 [node name="Camera3D" type="Camera3D" parent="Player_character/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38419e-07, -0.0459095, 2.95023)
 
-[node name="Spawner" parent="Player_character" instance=ExtResource("2_djukj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.06043, 0)
-
 [node name="SandParticleSystem" type="CPUParticles3D" parent="Player_character"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0323478, -0.978019, -0.0460119)
 amount = 20
