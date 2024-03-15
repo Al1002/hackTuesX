@@ -86,4 +86,4 @@ key_exit={
 
 [physics]
 
-3d/default_gravity=5.0
+3d/default_gravity=3.0
