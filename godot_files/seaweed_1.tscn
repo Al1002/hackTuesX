@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkqmv1ocalrft"]
+
+[ext_resource type="ArrayMesh" uid="uid://df76fetkmmv3w" path="res://assets/flora/Seaweed1.obj" id="1_otddt"]
+
+[node name="Seaweed1" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8503, -88.3071, -32.7941)
+mesh = ExtResource("1_otddt")
