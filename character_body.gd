@@ -11,7 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var spring_arm = $SpringArm3D
 @onready var jump_audio = $AudioStreamPlayer
 
-@export var mouse_sensitivity = 0.0015
+@export var mouse_sensitivity = 0.0030
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
