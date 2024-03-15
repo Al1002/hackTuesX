@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d14luksvgtfpg"]
+[gd_scene load_steps=20 format=3 uid="uid://d14luksvgtfpg"]
 
 [ext_resource type="PackedScene" uid="uid://cepjwdnob3o6l" path="res://godot_files/character_body.tscn" id="1_vfmfl"]
 [ext_resource type="PackedScene" uid="uid://ignpdv10rx52" path="res://addons/boujie_water_shader/prefabs/deep_ocean.tscn" id="2_8p12h"]
@@ -12,6 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://cymshoqnj24ms" path="res://godot_files/map.tscn" id="10_o8yam"]
 [ext_resource type="Script" path="res://godot_files/FishHandler.gd" id="11_qiybj"]
 [ext_resource type="PackedScene" uid="uid://osn10bktsdmf" path="res://godot_files/fish.tscn" id="12_kjbfh"]
+[ext_resource type="AudioStream" uid="uid://cwqljpa0cfydl" path="res://sfx/sand-and-wind-atmo-24424.mp3" id="10_kjxhv"]
+[ext_resource type="PackedScene" uid="uid://77qnjffqnygk" path="res://godot_files/world_bound.tscn" id="11_x6y3e"]
+[ext_resource type="PackedScene" uid="uid://b1t6bnt4o74in" path="res://godot_files/main_rock.tscn" id="12_68mlv"]
+[ext_resource type="PackedScene" uid="uid://8g4gb7yu028a" path="res://godot_files/relic.tscn" id="12_70ut1"]
+[ext_resource type="Script" path="res://godot_files/TextLabel.gd" id="13_i4ohc"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jlsb8"]
 size = Vector2(2000, 2000)
@@ -47,7 +52,7 @@ edge_fade = 0.551093
 [node name="Main" type="Node"]
 
 [node name="Player_character" parent="." instance=ExtResource("1_vfmfl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -3.60723, 0)
 
 [node name="DeepOcean" parent="." instance=ExtResource("2_8p12h")]
 transform = Transform3D(1, 0, 0, 0, 1.14258, 0, 0, 0, 1, 0, 0, 0)
@@ -72,7 +77,6 @@ shape = SubResource("BoxShape3D_3nfjc")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment_Stuff"]
 transform = Transform3D(0.877037, -0.278375, 0.391552, 0, 0.815017, 0.579437, -0.480422, -0.508188, 0.7148, 0, 23.7697, 0)
-light_energy = 1.2
 shadow_enabled = true
 directional_shadow_max_distance = 2000.0
 
@@ -96,6 +100,14 @@ script = ExtResource("8_13iw7")
 stream = ExtResource("9_3bfqq")
 
 [node name="UnderwaterAmbience" type="AudioStreamPlayer" parent="AmbienceStuff"]
+stream = ExtResource("10_kjxhv")
+volume_db = -15.0
+
+[node name="WorldBound" parent="." instance=ExtResource("11_x6y3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.981819, 0)
+
+[node name="BigRock" parent="." instance=ExtResource("12_68mlv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -36.9589, 0)
 
 [node name="map" parent="." instance=ExtResource("10_o8yam")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -79.4791, 0)
@@ -105,6 +117,16 @@ script = ExtResource("11_qiybj")
 scene = ExtResource("12_kjbfh")
 spawn_dist = 30.0
 group_dist = 5.0
+
+[node name="Relic" parent="." instance=ExtResource("12_70ut1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.565764, -14.4818, 0.288555)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="TextLabel" type="RichTextLabel" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("13_i4ohc")
 
 [connection signal="timeout" from="AmbienceStuff/Timer" to="AmbienceStuff" method="_on_timer_timeout"]
 

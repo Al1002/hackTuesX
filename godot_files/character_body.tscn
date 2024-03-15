@@ -1,8 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://cepjwdnob3o6l"]
+[gd_scene load_steps=16 format=3 uid="uid://cepjwdnob3o6l"]
 
 [ext_resource type="Script" path="res://godot_files/character_body.gd" id="1_r8e6a"]
 [ext_resource type="Texture2D" uid="uid://dwsniss71hd03" path="res://example/boujie_water_shader/Sand.png" id="2_amdc7"]
+[ext_resource type="AudioStream" uid="uid://d2pncc2yu2gvj" path="res://sfx/swim.wav" id="2_v74kn"]
 [ext_resource type="PackedScene" uid="uid://cmimtn3cx158f" path="res://godot_files/character.tscn" id="3_jwo0w"]
+[ext_resource type="AudioStream" uid="uid://ci1l3exf3obmo" path="res://sfx/swim2.wav" id="3_mkwrv"]
+[ext_resource type="AudioStream" uid="uid://do3r52w87iwag" path="res://sfx/swim3.wav" id="4_rc5jm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mmm2h"]
 
@@ -47,10 +50,13 @@ visible = false
 mesh = SubResource("CapsuleMesh_2jntw")
 
 [node name="SwimSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_v74kn")
 
 [node name="SwimSound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mkwrv")
 
 [node name="SwimSound3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rc5jm")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.998924, 0.0463742, 0, -0.0463742, 0.998924, 0, 0, 0)
