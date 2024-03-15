@@ -33,7 +33,7 @@ func _unhandled_input(event):
 		rotation.x -= event.relative.y * mouse_sensitivity
 		rotation.y -= event.relative.x * mouse_sensitivity
 		rotation_degrees.x = clamp(rotation_degrees.x, -30.0, 30.0)
-		spring_arm.rotation_degrees.x = rotation_degrees.x / 2
+		spring_arm.rotation_degrees.x = rotation_degrees.x * 2
 
 func _process(delta):
 	if freze == true:
@@ -49,6 +49,8 @@ func _physics_process(delta):
 	if freze == true:
 		velocity = Vector3(0,0,0)
 		return
+	if  position.x > 100 or position.z > 100 or position.x < -100 or position.z < -100: # invisible wall
+		position=Vector3(0,-10,0)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
