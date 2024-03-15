@@ -31,6 +31,7 @@ func _unhandled_input(event):
 		rotation.y -= event.relative.x * mouse_sensitivity
 		rotation_degrees.x = clamp(rotation_degrees.x, -30.0, 30.0)
 		spring_arm.rotation_degrees.x = rotation_degrees.x / 2
+		
 
 func _process(delta):
 	if animation_state == IDLE:
