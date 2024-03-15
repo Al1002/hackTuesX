@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 15
+const SPEED = 10
 const JUMP_VELOCITY = 4.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -33,7 +33,7 @@ func _unhandled_input(event):
 		rotation.x -= event.relative.y * mouse_sensitivity
 		rotation.y -= event.relative.x * mouse_sensitivity
 		rotation_degrees.x = clamp(rotation_degrees.x, -30.0, 30.0)
-		spring_arm.rotation_degrees.x = rotation_degrees.x * 2
+		spring_arm.rotation_degrees.x = rotation_degrees.x / 2
 
 func _process(delta):
 	if freze == true:

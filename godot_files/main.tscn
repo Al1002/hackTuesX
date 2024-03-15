@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d14luksvgtfpg"]
+[gd_scene load_steps=20 format=3 uid="uid://d14luksvgtfpg"]
 
 [ext_resource type="PackedScene" uid="uid://cepjwdnob3o6l" path="res://godot_files/character_body.tscn" id="1_vfmfl"]
 [ext_resource type="PackedScene" uid="uid://ignpdv10rx52" path="res://addons/boujie_water_shader/prefabs/deep_ocean.tscn" id="2_8p12h"]
@@ -9,6 +9,9 @@
 [ext_resource type="Script" path="res://example/boujie_water_shader/underwater_fog.gd" id="7_0ikhd"]
 [ext_resource type="Script" path="res://godot_files/AmbiencePlay.gd" id="8_13iw7"]
 [ext_resource type="AudioStream" uid="uid://m41u4qsw3rpe" path="res://sfx/AmbientWaters.wav" id="9_3bfqq"]
+[ext_resource type="PackedScene" uid="uid://cymshoqnj24ms" path="res://godot_files/map.tscn" id="10_o8yam"]
+[ext_resource type="Script" path="res://godot_files/FishHandler.gd" id="11_qiybj"]
+[ext_resource type="PackedScene" uid="uid://osn10bktsdmf" path="res://godot_files/fish.tscn" id="12_kjbfh"]
 [ext_resource type="AudioStream" uid="uid://cwqljpa0cfydl" path="res://sfx/sand-and-wind-atmo-24424.mp3" id="10_kjxhv"]
 [ext_resource type="PackedScene" uid="uid://77qnjffqnygk" path="res://godot_files/world_bound.tscn" id="11_x6y3e"]
 [ext_resource type="PackedScene" uid="uid://b1t6bnt4o74in" path="res://godot_files/main_rock.tscn" id="12_68mlv"]
@@ -34,7 +37,7 @@ shader_parameter/uv1_scale = Vector3(0.1, 0.1, 0.1)
 shader_parameter/uv1_offset = null
 shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = null
-shader_parameter/drop_far = 2000.0
+shader_parameter/drop_far = 1000.0
 shader_parameter/texture_albedo = ExtResource("4_u7p1w")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nfjc"]
@@ -42,9 +45,9 @@ size = Vector3(300, 50, 300)
 
 [sub_resource type="FogMaterial" id="FogMaterial_w216v"]
 density = 0.3558
-albedo = Color(0.301961, 0.603922, 1, 1)
-height_falloff = 1e+06
-edge_fade = 0.926824
+albedo = Color(0.196078, 0.552941, 1, 1)
+height_falloff = 100.0
+edge_fade = 0.551093
 
 [node name="Main" type="Node"]
 
@@ -61,6 +64,7 @@ mesh = SubResource("PlaneMesh_jlsb8")
 skeleton = NodePath("../../Other_Designers")
 surface_material_override/0 = SubResource("ShaderMaterial_r0ll8")
 script = ExtResource("5_bls4k")
+drop_far = 1000.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="DeepOcean/OceanFloor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.479126, 0)
@@ -80,6 +84,7 @@ directional_shadow_max_distance = 2000.0
 environment = ExtResource("6_4r4dy")
 
 [node name="UnderwaterFog" type="FogVolume" parent="Environment_Stuff"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0624771, 0.0826836, 0.158302)
 visible = false
 shape = 4
 material = SubResource("FogMaterial_w216v")
@@ -103,6 +108,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.981819, 0)
 
 [node name="BigRock" parent="." instance=ExtResource("12_68mlv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -36.9589, 0)
+
+[node name="map" parent="." instance=ExtResource("10_o8yam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -79.4791, 0)
+
+[node name="FishHandler" type="Node3D" parent="."]
+script = ExtResource("11_qiybj")
+scene = ExtResource("12_kjbfh")
+spawn_dist = 30.0
+group_dist = 5.0
 
 [node name="Relic" parent="." instance=ExtResource("12_70ut1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.565764, -14.4818, 0.288555)
