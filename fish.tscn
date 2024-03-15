@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://osn10bktsdmf"]
+
+[ext_resource type="Script" path="res://fish.gd" id="1_ox1ku"]
+[ext_resource type="Texture2D" uid="uid://d264h8n5x08aj" path="res://assets/fauna/blue_fish.png" id="2_fkrmc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qchd"]
+transparency = 1
+albedo_texture = ExtResource("2_fkrmc")
+
+[sub_resource type="QuadMesh" id="QuadMesh_5mom4"]
+material = SubResource("StandardMaterial3D_3qchd")
+
+[node name="fish" type="Node3D"]
+script = ExtResource("1_ox1ku")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_5mom4")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
