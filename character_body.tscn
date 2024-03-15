@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmdf4gsnq1fj"]
+[gd_scene load_steps=7 format=3 uid="uid://cmdf4gsnq1fj"]
 
 [ext_resource type="Script" path="res://character_body.gd" id="1_r8e6a"]
-[ext_resource type="AudioStream" path="res://jump_splash.wav" id="2_youuh"]
+[ext_resource type="AudioStream" path="res://sfx/swimup.wav" id="2_tfqy0"]
+[ext_resource type="AudioStream" path="res://sfx/swim.wav" id="3_cgymt"]
+[ext_resource type="AudioStream" path="res://sfx/swim2.wav" id="4_lnqnv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xu45o"]
 
@@ -16,6 +18,11 @@ shape = SubResource("CapsuleShape3D_xu45o")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_2jntw")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_youuh")
-mix_target = 2
+[node name="SwimSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_tfqy0")
+
+[node name="SwimSound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_cgymt")
+
+[node name="SwimSound3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_lnqnv")
