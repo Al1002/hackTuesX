@@ -14,7 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://8g4gb7yu028a" path="res://godot_files/relic.tscn" id="12_70ut1"]
 [ext_resource type="PackedScene" uid="uid://b1npuq7rhmm0w" path="res://godot_files/main_rock.tscn" id="12_a3naf"]
 [ext_resource type="Script" path="res://godot_files/TextLabel.gd" id="13_i4ohc"]
-
+[ext_resource type="AudioStream" uid="uid://2f8j243xoto7" path="res://sfx/AmbientWaters.wav" id="9_3bfqq"]
+[ext_resource type="ArrayMesh" uid="uid://dpnakr0b7lusn" path="res://assets/main rock.mtl.obj" id="11_uosv2"]
 [sub_resource type="PlaneMesh" id="PlaneMesh_jlsb8"]
 size = Vector2(2000, 2000)
 subdivide_width = 16
@@ -56,7 +57,7 @@ transform = Transform3D(1, 0, 0, 0, 1.14258, 0, 0, 0, 1, 0, 0, 0)
 far_edge = 4000
 
 [node name="OceanFloor" type="MeshInstance3D" parent="DeepOcean"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -104.974, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -82.1294, 0)
 mesh = SubResource("PlaneMesh_jlsb8")
 skeleton = NodePath("../../Other_Designers")
 surface_material_override/0 = SubResource("ShaderMaterial_r0ll8")
