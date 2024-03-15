@@ -9,7 +9,6 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
 @onready var spring_arm = $SpringArm3D
-@onready var jump_audio = $AudioStreamPlayer
 
 @export var mouse_sensitivity = 0.0030
 
@@ -51,8 +50,16 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump"):
 		velocity.y = JUMP_VELOCITY
-		jump_audio.play()
-
+		
+		var randnum = randi_range(1,3)
+		if randnum == 1:
+			$SwimSound.play()
+		if randnum == 2:
+			$SwimSound2.play()
+		if randnum == 3:
+			$SwimSound3.play()
+	
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")

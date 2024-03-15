@@ -1,0 +1,175 @@
+[33mcommit ca867121c67b85e287649cbb892147d552ed0d46[m[33m ([m[1;36mHEAD -> [m[1;32mBoris[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: 31c9f88 9fed3a5
+Author: BvHand487 <84194378+BvHand487@users.noreply.github.com>
+Date:   Thu Mar 14 16:10:51 2024 +0200
+
+    Merge pull request #8 from Al1002/Boris
+    
+    fishes & corals
+
+[33mcommit 9fed3a537bdcc9f7e3843e58114e3c931b7e87d2[m[33m ([m[1;31morigin/Boris[m[33m)[m
+Author: BvHand487 <boris.handjiev@gmail.com>
+Date:   Thu Mar 14 16:09:53 2024 +0200
+
+    fishes & corals
+
+[33mcommit 31c9f888134285affbcaeff1da48a936eae07f5a[m
+Merge: 6e64a12 2cdf8e0
+Author: MartinR260 <127389329+MartinR260@users.noreply.github.com>
+Date:   Thu Mar 14 15:26:39 2024 +0200
+
+    Merge pull request #7 from Al1002/martin
+    
+    Water Terrain Added
+
+[33mcommit 2cdf8e01e9f43d3186346495d1a27b4371e0ff01[m[33m ([m[1;31morigin/martin[m[33m)[m
+Merge: 8caf4fa 6e64a12
+Author: MartinR260 <127389329+MartinR260@users.noreply.github.com>
+Date:   Thu Mar 14 15:26:27 2024 +0200
+
+    Merge branch 'main' into martin
+
+[33mcommit 8caf4faa4a440367d249b8e08500472afd204b38[m
+Author: MartinR260 <martinkata2006@gmai.com>
+Date:   Thu Mar 14 15:19:20 2024 +0200
+
+    Water Terrain Added
+
+[33mcommit 6e64a120a6220754d2449450e18951458c86bfe9[m
+Merge: 2d13cde 34bedb6
+Author: BvHand487 <84194378+BvHand487@users.noreply.github.com>
+Date:   Thu Mar 14 14:38:58 2024 +0200
+
+    Merge pull request #6 from Al1002/Boris
+    
+    ruin assets fixed
+
+[33mcommit 34bedb62cabd4212bbd7fa40d53ad597f07e5a36[m
+Author: BvHand487 <boris.handjiev@gmail.com>
+Date:   Thu Mar 14 14:37:37 2024 +0200
+
+    ruins fixed
+
+[33mcommit 2d13cde11f527c91b231d5a8117a91c9432f9246[m
+Merge: 9b8c259 0a98dd5
+Author: BvHand487 <84194378+BvHand487@users.noreply.github.com>
+Date:   Thu Mar 14 14:10:56 2024 +0200
+
+    Merge pull request #5 from Al1002/Boris
+    
+    ASsetst of ruins
+
+[33mcommit 0a98dd5fa4428780d535560e1d572624151b53f6[m
+Author: BvHand487 <boris.handjiev@gmail.com>
+Date:   Thu Mar 14 14:10:10 2024 +0200
+
+    ruins
+
+[33mcommit 9b8c259d47a78f35510a71265829e413bd8c174c[m
+Merge: b936cd8 cf6c22d
+Author: BvHand487 <84194378+BvHand487@users.noreply.github.com>
+Date:   Thu Mar 14 12:45:48 2024 +0200
+
+    Merge pull request #4 from Al1002/Boris
+    
+    Assets
+
+[33mcommit cf6c22d94c929f41027f34803637e5753df8c593[m
+Merge: 22cb922 b936cd8
+Author: BvHand487 <84194378+BvHand487@users.noreply.github.com>
+Date:   Thu Mar 14 12:45:15 2024 +0200
+
+    Merge branch 'main' into Boris
+
+[33mcommit 22cb922f5e030705aadf67d70bdc1c83f55fd25d[m
+Author: BvHand487 <boris.handjiev@gmail.com>
+Date:   Thu Mar 14 12:38:02 2024 +0200
+
+    assets
+
+[33mcommit b936cd866eeeae6109cf45711b96a71ce7e4b26a[m
+Merge: 7cb6392 3b7fffe
+Author: Bicagis <aleksandriliev05@gmail.com>
+Date:   Thu Mar 14 12:07:40 2024 +0200
+
+    Merge pull request #3 from Al1002/alex
+    
+    Alex
+
+[33mcommit 3b7fffe09ff8a3840c92a52710458710340b6ca7[m
+Author: Alex_laptop <aleksandriliev05@gmail.com>
+Date:   Thu Mar 14 12:06:51 2024 +0200
+
+    Cam changes
+
+[33mcommit dca3a0997b0ce5ea98ee642a721949444fc46969[m
+Author: Alex_laptop <aleksandriliev05@gmail.com>
+Date:   Thu Mar 14 11:36:43 2024 +0200
+
+    Added splashing
+
+[33mcommit 4174d4d3e3728bdb2afe23c743724f6123f94790[m
+Author: Alex_laptop <aleksandriliev05@gmail.com>
+Date:   Thu Mar 14 11:12:51 2024 +0200
+
+    Hide mouse, inf jump
+
+[33mcommit 7cb6392498155a236f68acfcd532034193275fd3[m
+Merge: d7f9b63 6289f29
+Author: MartinR260 <127389329+MartinR260@users.noreply.github.com>
+Date:   Thu Mar 14 11:10:16 2024 +0200
+
+    Merge pull request #2 from Al1002/martin
+    
+    Water Shader/Asset
+
+[33mcommit 6289f299cbac62118a0653c00ef76bc21a6ef4ce[m
+Author: MartinR260 <martinkata2006@gmai.com>
+Date:   Thu Mar 14 11:08:10 2024 +0200
+
+    Water Shader/Asset
+
+[33mcommit d514da4f52d9a22a0e398017a2d7185e44bf2bfb[m
+Author: Alex_laptop <aleksandriliev05@gmail.com>
+Date:   Thu Mar 14 10:55:09 2024 +0200
+
+    Cammera mouse control
+
+[33mcommit 51d26a4811a5e0bcbc0a1c85b9d863114c3965b1[m
+Author: Alex_laptop <aleksandriliev05@gmail.com>
+Date:   Thu Mar 14 10:47:29 2024 +0200
+
+    Bean now jump
+
+[33mcommit b19c9815984375dbd5ce894c8bb0fcb06ed089e9[m
+Author: Alex_laptop <aleksandriliev05@gmail.com>
+Date:   Thu Mar 14 10:40:14 2024 +0200
+
+    Floor, bean, and cam
+
+[33mcommit d7f9b63ed49eabb432e1b3d44c286511ef2e83d9[m
+Merge: a10eb66 7732c95
+Author: BvHand487 <84194378+BvHand487@users.noreply.github.com>
+Date:   Thu Mar 14 10:39:37 2024 +0200
+
+    Merge pull request #1 from Al1002/martin
+    
+    Third Person Camera Asset
+
+[33mcommit 7732c95e410419fa3bc86cc42148577fe7610f4f[m
+Author: MartinR260 <martinkata2006@gmai.com>
+Date:   Thu Mar 14 10:34:22 2024 +0200
+
+    Third Person Camera Asset
+
+[33mcommit a10eb66e0c048d4c7513db74e9090d570b980320[m[33m ([m[1;31morigin/ivo[m[33m, [m[1;31morigin/dani[m[33m)[m
+Author: Alex_laptop <aleksandriliev05@gmail.com>
+Date:   Thu Mar 14 10:02:36 2024 +0200
+
+    Initial project
+
+[33mcommit abd499804045652665abbed7e20b0330af071c13[m
+Author: Bicagis <aleksandriliev05@gmail.com>
+Date:   Thu Mar 14 09:55:26 2024 +0200
+
+    Initial commit
