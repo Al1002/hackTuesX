@@ -25,17 +25,20 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$BubbleParticleSystem.emitting = true
 
+
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
-		# pan camera 
-		pass
+		rotation.x -= event.relative.y * mouse_sensitivity
+		rotation.y -= event.relative.x * mouse_sensitivity
+		rotation_degrees.x = clamp(rotation_degrees.x, -30.0, 30.0)
+		spring_arm.rotation_degrees.x = rotation_degrees.x / 2
 
 func _process(delta):
 	if animation_state == IDLE:
 		$character/AnimationPlayer.play("treading")
 	elif animation_state == MOVING:
 		$character/AnimationPlayer.play("swimming")
-		
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -57,8 +60,9 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		$character/rig.look_at(position+velocity)
+		$character.look_at(position+direction) # turn into lerp later
 		animation_state = MOVING
+		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)

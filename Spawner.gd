@@ -3,7 +3,7 @@ extends Node3D
 @export var spawning_scene : PackedScene
 var spawnPoint : Vector3
 var spawnRadius : float = 60
-var rotationSpeed : float = 1
+var rotationSpeed : float = 0.2
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Timer.wait_time = 0.5

@@ -93,4 +93,4 @@ scale_amount_curve = SubResource("Curve_kp668")
 [node name="Spawner" parent="." instance=ExtResource("4_1pb38")]
 
 [node name="character" parent="." instance=ExtResource("5_vcybb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.709611, 0.0768274)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0104564, 0.0768274)
