@@ -105,6 +105,7 @@ script = ExtResource("11_qiybj")
 scene = ExtResource("12_kjbfh")
 spawn_dist = 30.0
 group_dist = 5.0
+spawn_chance = 0.005
 
 [connection signal="timeout" from="AmbienceStuff/Timer" to="AmbienceStuff" method="_on_timer_timeout"]
 
