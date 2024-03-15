@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cmdf4gsnq1fj"]
+[gd_scene load_steps=13 format=3 uid="uid://cepjwdnob3o6l"]
 
 [ext_resource type="Script" path="res://character_body.gd" id="1_r8e6a"]
 [ext_resource type="Texture2D" uid="uid://dwsniss71hd03" path="res://example/boujie_water_shader/Sand.png" id="2_amdc7"]
+[ext_resource type="PackedScene" uid="uid://cmimtn3cx158f" path="res://character.tscn" id="3_jwo0w"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mmm2h"]
 
@@ -37,6 +38,7 @@ point_count = 3
 script = ExtResource("1_r8e6a")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.511863, -0.232905)
 shape = SubResource("CapsuleShape3D_mmm2h")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -59,7 +61,7 @@ spring_length = 5.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38419e-07, -0.0459095, 2.95023)
 
 [node name="SandParticleSystem" type="CPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0323478, -0.978019, -0.0460119)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0323478, -0.266356, -0.203893)
 amount = 20
 lifetime = 3.0
 randomness = 1.0
@@ -74,7 +76,7 @@ damping_curve = SubResource("Curve_v7wpe")
 scale_amount_max = 2.5
 
 [node name="BubbleParticleSystem" type="CPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.526824, -0.754789)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33545, -0.314067)
 amount = 5
 lifetime = 4.0
 preprocess = 0.5
@@ -90,3 +92,5 @@ scale_amount_max = 0.3
 scale_amount_curve = SubResource("Curve_sjdtq")
 
 [node name="SurfacingSound" type="AudioStreamPlayer" parent="."]
+
+[node name="character" parent="." instance=ExtResource("3_jwo0w")]
