@@ -13,18 +13,29 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @export var mouse_sensitivity = 0.0030
 
+enum {
+	MOVING,
+	IDLE,
+	JUMPING
+}
+
+var animation_state = IDLE
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$BubbleParticleSystem.emitting = true
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
-		$MeshInstance3D.rotation_degrees.x -= event.relative.y * mouse_sensitivity
-		$MeshInstance3D.rotation.y -= event.relative.x * mouse_sensitivity
-		$MeshInstance3D.rotation_degrees.x = clamp($MeshInstance3D.rotation_degrees.x, -30.0, 30.0)
-		spring_arm.rotation_degrees.x = $MeshInstance3D.rotation_degrees.x * 2
+		# pan camera 
+		pass
 
-
+func _process(delta):
+	if animation_state == IDLE:
+		$character/AnimationPlayer.play("treading")
+	elif animation_state == MOVING:
+		$character/AnimationPlayer.play("swimming")
+		
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -33,7 +44,6 @@ func _physics_process(delta):
 	
 	if is_on_floor():
 		$SandParticleSystem.emitting = true
-
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump"):
@@ -47,9 +57,12 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		$character/rig.look_at(position+velocity)
+		animation_state = MOVING
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+		animation_state = IDLE
+	
 	move_and_slide()
 
