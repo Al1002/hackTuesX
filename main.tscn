@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://pygyx6cc2ads"]
+[gd_scene load_steps=24 format=3 uid="uid://pygyx6cc2ads"]
 
 [ext_resource type="Texture2D" uid="uid://dwsniss71hd03" path="res://example/boujie_water_shader/Sand.png" id="1_eahax"]
 [ext_resource type="PackedScene" uid="uid://cmdf4gsnq1fj" path="res://character_body.tscn" id="1_flr0v"]
@@ -19,23 +19,27 @@ albedo_texture = ExtResource("1_eahax")
 
 [sub_resource type="BoxMesh" id="BoxMesh_4p6em"]
 material = SubResource("StandardMaterial3D_562qw")
-size = Vector3(0.025, 0.025, 0.025)
+size = Vector3(0.008, 0.008, 0.008)
 
-[sub_resource type="Curve" id="Curve_qehaw"]
+[sub_resource type="Curve" id="Curve_l7w8g"]
 min_value = -200.0
 max_value = 200.0
-_data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(1e-05, 200), 0.0, 0.0, 0, 0, Vector2(2e-05, 200), 0.0, 0.0, 0, 0, Vector2(3e-05, 200), 0.0, 0.0, 0, 0, Vector2(4e-05, 200), 0.0, 0.0, 0, 0, Vector2(5e-05, 200), 0.0, 0.0, 0, 0, Vector2(6e-05, 200), 0.0, 0.0, 0, 0, Vector2(7e-05, 200), 0.0, 0.0, 0, 0, Vector2(1, -200), 0.0, 0.0, 0, 0]
-point_count = 9
+_data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(0.362637, -141.053), 0.0, 0.0, 0, 0, Vector2(1, -200), 0.0, 0.0, 0, 0]
+point_count = 3
 
-[sub_resource type="Curve" id="Curve_owl6l"]
+[sub_resource type="Curve" id="Curve_he3qd"]
 max_value = 100.0
 _data = [Vector2(0, 100), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_j1cno"]
+_data = [Vector2(0, 0.684211), 0.0, 0.0, 0, 0, Vector2(0.972528, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="SphereMesh" id="SphereMesh_lvols"]
 
 [sub_resource type="Curve" id="Curve_1vvw5"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.225275, 0.431579), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.252747, 0.368421), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jlsb8"]
@@ -60,7 +64,6 @@ shader_parameter/drop_far = 2000.0
 shader_parameter/texture_albedo = ExtResource("1_eahax")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nfjc"]
-size = Vector3(300, 1, 300)
 
 [sub_resource type="FogMaterial" id="FogMaterial_w216v"]
 density = 0.3558
@@ -82,32 +85,35 @@ spring_length = 5.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38419e-07, -0.0459095, 2.95023)
 
 [node name="SandParticleSystem" type="CPUParticles3D" parent="Player_character"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0323478, -0.978019, -0.0460119)
-amount = 20
-lifetime = 3.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0323478, -1.01882, -0.0460119)
+amount = 500
+explosiveness = 1.0
 randomness = 1.0
 lifetime_randomness = 1.0
 mesh = SubResource("BoxMesh_4p6em")
 direction = Vector3(0, 1, 0)
 spread = 90.0
-initial_velocity_min = 2.0
-initial_velocity_max = 10.0
-linear_accel_curve = SubResource("Curve_qehaw")
-damping_curve = SubResource("Curve_owl6l")
+gravity = Vector3(0, -1, 0)
+initial_velocity_max = 2.0
+linear_accel_max = 1.0
+linear_accel_curve = SubResource("Curve_l7w8g")
+damping_curve = SubResource("Curve_he3qd")
 scale_amount_max = 2.5
+scale_amount_curve = SubResource("Curve_j1cno")
 
 [node name="BubbleParticleSystem" type="CPUParticles3D" parent="Player_character"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.526824, -0.754789)
 amount = 5
-lifetime = 4.0
+lifetime = 3.2
 preprocess = 0.5
+explosiveness = 0.72
 randomness = 1.0
 mesh = SubResource("SphereMesh_lvols")
 direction = Vector3(0, 1, 0)
-spread = 90.0
-gravity = Vector3(0, 0.33, 0)
-initial_velocity_min = 0.3
-initial_velocity_max = 2.0
+spread = 60.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.33
+initial_velocity_max = 0.33
 scale_amount_min = 0.1
 scale_amount_max = 0.3
 scale_amount_curve = SubResource("Curve_1vvw5")
@@ -120,17 +126,17 @@ transform = Transform3D(1, 0, 0, 0, 1.14258, 0, 0, 0, 1, 0, 0, 0)
 far_edge = 4000
 
 [node name="OceanFloor" type="MeshInstance3D" parent="DeepOcean"]
-transform = Transform3D(300, 0, 0, 0, 0.328206, 0, 0, 0, 300, 0, -306.325, 0)
+transform = Transform3D(300, 0, 0, 0, 3, 0, 0, 0, 300, 0, -306.325, 0)
 mesh = SubResource("PlaneMesh_jlsb8")
 skeleton = NodePath("../../Other_Designers")
 surface_material_override/0 = SubResource("ShaderMaterial_r0ll8")
 script = ExtResource("1_vgk56")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="DeepOcean/OceanFloor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.479126, 0)
+transform = Transform3D(301, 0, 0, 0, 301, 0, 0, 0, 301, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeepOcean/OceanFloor/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.471741, 0)
+transform = Transform3D(300, 0, 0, 0, 300, 0, 0, 0, 300, 0, 0, 0)
 shape = SubResource("BoxShape3D_3nfjc")
 
 [node name="Environment_Stuff" type="Node" parent="."]
