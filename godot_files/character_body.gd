@@ -2,15 +2,16 @@ extends CharacterBody3D
 
 
 const SPEED = 10
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 7
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+var camera
+
 var freze : bool
 
 @onready var spring_arm = $SpringArm3D
-
 @export var mouse_sensitivity = 0.0030
 
 enum {
@@ -25,6 +26,8 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$BubbleParticleSystem.emitting = true
 	freze = false
+	camera = get_node("SpringArm3D/Camera3D")
+	
 
 func _unhandled_input(event):
 	if freze == true:
@@ -53,6 +56,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		if velocity.y > -4:
 			velocity.y -= gravity * delta
+
 		$SandParticleSystem.emitting = false
 	
 	if is_on_floor():
@@ -74,14 +78,31 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-		$character.look_at(position+velocity) # turn into lerp later
+		var lookahead = camera.global_transform.basis.z
+		var vertical_factor = abs(lookahead.dot(Vector3(0, 1, 0)))
+		
+		if Input.is_action_pressed("forward") and camera.global_transform.origin.y < global_transform.origin.y:
+			velocity.y = SPEED * vertical_factor * 0.6
+			
+		elif Input.is_action_pressed(" back") and camera.global_transform.origin.y > global_transform.origin.y:
+			velocity.y = SPEED * vertical_factor * 0.6
+			
+		elif Input.is_action_pressed(" back") and camera.global_transform.origin.y < global_transform.origin.y:
+			velocity.y = - SPEED * vertical_factor * 0.8
+			
+		elif Input.is_action_pressed("forward") and camera.global_transform.origin.y > global_transform.origin.y:
+			velocity.y = - SPEED * vertical_factor * 0.8
+		
+		velocity.x = direction.x * SPEED * (1 - vertical_factor)
+		velocity.z = direction.z * SPEED * (1 - vertical_factor)
+
+		$character.look_at(position + direction) # turn into lerp later
 		animation_state = MOVING
 		
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, SPEED * 0.01)
+		velocity.z = move_toward(velocity.z, 0, SPEED * 0.01)
+		velocity.y = move_toward(velocity.y, 0, SPEED * 0.01)
 		animation_state = IDLE
 	
 	move_and_slide()
