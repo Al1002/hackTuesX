@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://osn10bktsdmf" path="res://godot_files/fish.tscn" id="12_kjbfh"]
 [ext_resource type="Shader" path="res://addons/post_processing/shaders/vignette.gdshader" id="17_5cki1"]
 [ext_resource type="ArrayMesh" uid="uid://bmfev2vdvlgj5" path="res://assets/extras/Boat.obj" id="18_3k5tt"]
-[ext_resource type="Texture2D" uid="uid://cxpgqcwvgh3dj" path="res://assets/extras/old-paper.png" id="18_fmugg"]
+[ext_resource type="Texture2D" path="res://assets/extras/old-paper.png" id="18_fmugg"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jlsb8"]
 size = Vector2(2000, 2000)
