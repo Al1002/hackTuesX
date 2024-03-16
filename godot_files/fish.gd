@@ -6,7 +6,7 @@ var camera
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Timer.start(10)
+	$Timer.start(8)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -17,7 +17,6 @@ func _process(delta):
 	
 func _physics_process(delta):
 	time += delta
-	
 	transform.origin += global_transform.basis.z * speed * delta
 	
 

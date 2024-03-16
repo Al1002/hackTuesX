@@ -8,7 +8,9 @@ var plane_mesh = QuadMesh.new()
 @export var spawn_chance : float
 var player
 
-var fish_tex = load("res://assets/fauna/tropical_fish.png")
+var fish1 = load("res://assets/fauna/tropical_fish.png")
+# var fish2 = load("res://assets/fauna/gray_fish.png")
+# var fish3 = load("res://assets/fauna/gold_fish.png")
 
 
 func spawn_fish(pos):
@@ -18,7 +20,20 @@ func spawn_fish(pos):
 	
 	var dir = Vector3(randf_range(-1, 1), randf_range(-1, 1), randf_range(-1, 1)).normalized()
 	
-	new_fish.get_node("MeshInstance3D").mesh.material.albedo_texture = fish_tex
+	new_fish.get_node("MeshInstance3D").mesh.material.albedo_texture = fish1
+	
+	# ?????
+	#var rand = randi_range(0, 2)
+
+	#if rand == 0:
+		#new_fish.get_node("MeshInstance3D").mesh.material.albedo_texture = fish1
+		#
+	#elif rand == 1:
+		#new_fish.get_node("MeshInstance3D").mesh.material.albedo_texture = fish2
+		#
+	#elif rand == 2:
+		#new_fish.get_node("MeshInstance3D").mesh.material.albedo_texture = fish3
+
 	
 	get_node("/root/Main").add_child(new_fish)
 	
@@ -37,4 +52,9 @@ func _ready():
 func _process(delta):
 	if randf_range(0, 1) < spawn_chance or Input.is_action_just_pressed("spawn_fish"):
 		var rand_dir = Vector3(randf_range(-1, 1), randf_range(-1, 1), randf_range(-1, 1)).normalized() * spawn_dist
-		spawn_fish_group(player.global_transform.origin + rand_dir, randi_range(20, 30))
+		var spawn_location = player.global_transform.origin + rand_dir
+		
+		if spawn_location.y > 0:
+			return
+			
+		spawn_fish_group(spawn_location, randi_range(20, 30))
