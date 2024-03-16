@@ -36,11 +36,9 @@ func _unhandled_input(event):
 		spring_arm.rotation_degrees.x = rotation_degrees.x / 2
 
 func _process(delta):
-	if freze == true:
-		return
 	if Input.is_action_pressed("key_exit"):
 		get_tree().quit()
-	if animation_state == IDLE:
+	if animation_state == IDLE or freze == true:
 		$character/AnimationPlayer.play("treading")
 	elif animation_state == MOVING:
 		$character/AnimationPlayer.play("swimming")
@@ -53,7 +51,8 @@ func _physics_process(delta):
 		position=Vector3(0,-10,0)
 	# Add the gravity.
 	if not is_on_floor():
-		velocity.y -= gravity * delta
+		if velocity.y > -4:
+			velocity.y -= gravity * delta
 		$SandParticleSystem.emitting = false
 	
 	if is_on_floor():
@@ -77,7 +76,7 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		$character.look_at(position+direction) # turn into lerp later
+		$character.look_at(position+velocity) # turn into lerp later
 		animation_state = MOVING
 		
 	else:

@@ -6,7 +6,6 @@ func _ready():
 	custom_minimum_size = Vector2(200, 50)
 	anchor_top = 0.5
 	anchor_left = 0.5
-	visible = false
 
 # Called every frame
 func _process(delta):

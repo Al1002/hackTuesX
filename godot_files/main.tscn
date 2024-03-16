@@ -10,12 +10,12 @@
 [ext_resource type="Script" path="res://godot_files/AmbiencePlay.gd" id="8_13iw7"]
 [ext_resource type="AudioStream" uid="uid://m41u4qsw3rpe" path="res://sfx/AmbientWaters.wav" id="9_3bfqq"]
 [ext_resource type="AudioStream" uid="uid://cwqljpa0cfydl" path="res://sfx/sand-and-wind-atmo-24424.mp3" id="10_kjxhv"]
-[ext_resource type="PackedScene" uid="uid://cymshoqnj24ms" path="res://godot_files/map.tscn" id="10_o8yam"]
+[ext_resource type="PackedScene" path="res://godot_files/map.tscn" id="10_o8yam"]
 [ext_resource type="Script" path="res://godot_files/FishHandler.gd" id="11_qiybj"]
 [ext_resource type="PackedScene" uid="uid://77qnjffqnygk" path="res://godot_files/world_bound.tscn" id="11_x6y3e"]
-[ext_resource type="PackedScene" path="res://godot_files/relic.tscn" id="12_70ut1"]
+[ext_resource type="PackedScene" uid="uid://c8mdeyu02t0hs" path="res://godot_files/relic.tscn" id="12_70ut1"]
 [ext_resource type="PackedScene" uid="uid://osn10bktsdmf" path="res://godot_files/fish.tscn" id="12_kjbfh"]
-[ext_resource type="Script" path="res://godot_files/TextLabel.gd" id="13_i4ohc"]
+[ext_resource type="Script" path="res://godot_files/UI.gd" id="15_pr6cl"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jlsb8"]
 size = Vector2(2000, 2000)
@@ -114,16 +114,41 @@ scene = ExtResource("12_kjbfh")
 spawn_dist = 30.0
 group_dist = 5.0
 
-[node name="Relic" parent="." instance=ExtResource("12_70ut1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.565764, -14.4818, 0.288555)
+[node name="Relics" type="Node" parent="."]
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="Relic" parent="Relics" instance=ExtResource("12_70ut1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8502, -65.1, 4.74287)
+
+[node name="Relic2" parent="Relics" instance=ExtResource("12_70ut1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99101, -57.9314, 2.44163)
+
+[node name="Relic3" parent="Relics" instance=ExtResource("12_70ut1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.5097, -73.1367, -44.9247)
+
+[node name="UI" type="Container" parent="."]
+anchors_preset = -1
+anchor_left = 0.002
+anchor_top = 0.008
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.304
+offset_top = -0.184
+offset_right = 1.0
+offset_bottom = 2.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("15_pr6cl")
 
 [node name="TextLabel" type="RichTextLabel" parent="UI"]
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("13_i4ohc")
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+layout_mode = 2
+color = Color(0.384314, 0.6, 0.592157, 0.65098)
 
 [connection signal="timeout" from="AmbienceStuff/Timer" to="AmbienceStuff" method="_on_timer_timeout"]
+[connection signal="collected" from="Relics/Relic" to="UI" method="_on_relic_collected"]
+[connection signal="collected" from="Relics/Relic2" to="UI" method="_on_relic_2_collected"]
+[connection signal="collected" from="Relics/Relic3" to="UI" method="_on_relic_3_collected"]
 
 [editable path="DeepOcean"]
