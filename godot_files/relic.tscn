@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8mdeyu02t0hs"]
+[gd_scene load_steps=5 format=3 uid="uid://ct6oprmt6sy1n"]
 
 [ext_resource type="Script" path="res://godot_files/relic.gd" id="1_su3g4"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vaw6h"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvysh"]
-albedo_color = Color(1, 1, 0, 1)
+albedo_color = Color(0.760784, 0.137255, 0.360784, 1)
 grow = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_wfmkd"]
@@ -20,8 +20,10 @@ script = ExtResource("1_su3g4")
 shape = SubResource("SphereShape3D_vaw6h")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-light_color = Color(1, 1, 0, 1)
+light_color = Color(0.760784, 0.137255, 0.360784, 1)
+light_energy = 21.695
 light_indirect_energy = 2.07
+shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_wfmkd")
