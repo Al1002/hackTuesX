@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d14luksvgtfpg"]
+[gd_scene load_steps=23 format=3 uid="uid://d14luksvgtfpg"]
 
 [ext_resource type="PackedScene" uid="uid://cepjwdnob3o6l" path="res://godot_files/character_body.tscn" id="1_vfmfl"]
 [ext_resource type="PackedScene" uid="uid://ignpdv10rx52" path="res://addons/boujie_water_shader/prefabs/deep_ocean.tscn" id="2_8p12h"]
@@ -9,13 +9,14 @@
 [ext_resource type="Script" path="res://example/boujie_water_shader/underwater_fog.gd" id="7_0ikhd"]
 [ext_resource type="Script" path="res://godot_files/AmbiencePlay.gd" id="8_13iw7"]
 [ext_resource type="AudioStream" uid="uid://m41u4qsw3rpe" path="res://sfx/AmbientWaters.wav" id="9_3bfqq"]
-[ext_resource type="AudioStream" uid="uid://cwqljpa0cfydl" path="res://sfx/sand-and-wind-atmo-24424.mp3" id="10_kjxhv"]
+[ext_resource type="AudioStream" path="res://sfx/sand-and-wind-atmo-24424.mp3" id="10_kjxhv"]
 [ext_resource type="PackedScene" uid="uid://cymshoqnj24ms" path="res://godot_files/map.tscn" id="10_o8yam"]
 [ext_resource type="Script" path="res://godot_files/FishHandler.gd" id="11_qiybj"]
 [ext_resource type="PackedScene" uid="uid://77qnjffqnygk" path="res://godot_files/world_bound.tscn" id="11_x6y3e"]
 [ext_resource type="PackedScene" path="res://godot_files/relic.tscn" id="12_70ut1"]
 [ext_resource type="PackedScene" uid="uid://osn10bktsdmf" path="res://godot_files/fish.tscn" id="12_kjbfh"]
 [ext_resource type="Script" path="res://godot_files/TextLabel.gd" id="13_i4ohc"]
+[ext_resource type="Shader" path="res://addons/post_processing/shaders/vignette.gdshader" id="17_5cki1"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jlsb8"]
 size = Vector2(2000, 2000)
@@ -47,6 +48,12 @@ density = 0.3558
 albedo = Color(0.196078, 0.552941, 1, 1)
 height_falloff = 100.0
 edge_fade = 0.551093
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oq1rn"]
+shader = ExtResource("17_5cki1")
+shader_parameter/vignette_intensity = 0.5
+shader_parameter/vignette_opacity = 0.06
+shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node"]
 
@@ -113,6 +120,7 @@ script = ExtResource("11_qiybj")
 scene = ExtResource("12_kjbfh")
 spawn_dist = 30.0
 group_dist = 5.0
+spawn_chance = 0.005
 
 [node name="Relic" parent="." instance=ExtResource("12_70ut1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.565764, -14.4818, 0.288555)
@@ -123,6 +131,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.565764, -14.4818, 0.288555
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("13_i4ohc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_oq1rn")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="timeout" from="AmbienceStuff/Timer" to="AmbienceStuff" method="_on_timer_timeout"]
 

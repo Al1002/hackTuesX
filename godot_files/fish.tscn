@@ -11,7 +11,7 @@ material = SubResource("StandardMaterial3D_3qchd")
 
 [node name="fish" type="Node3D"]
 script = ExtResource("1_ox1ku")
-speed = 30.0
+speed = 15.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("QuadMesh_5mom4")
