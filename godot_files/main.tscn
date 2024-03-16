@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d14luksvgtfpg"]
+[gd_scene load_steps=24 format=3 uid="uid://d14luksvgtfpg"]
 
 [ext_resource type="PackedScene" uid="uid://cepjwdnob3o6l" path="res://godot_files/character_body.tscn" id="1_vfmfl"]
 [ext_resource type="PackedScene" uid="uid://ignpdv10rx52" path="res://addons/boujie_water_shader/prefabs/deep_ocean.tscn" id="2_8p12h"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://osn10bktsdmf" path="res://godot_files/fish.tscn" id="12_kjbfh"]
 [ext_resource type="Script" path="res://godot_files/TextLabel.gd" id="13_i4ohc"]
 [ext_resource type="Shader" path="res://addons/post_processing/shaders/vignette.gdshader" id="17_5cki1"]
+[ext_resource type="ArrayMesh" uid="uid://bmfev2vdvlgj5" path="res://assets/extras/Boat.obj" id="18_3k5tt"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_jlsb8"]
 size = Vector2(2000, 2000)
@@ -58,7 +59,7 @@ shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
 [node name="Main" type="Node"]
 
 [node name="Player_character" parent="." instance=ExtResource("1_vfmfl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -3.60723, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0670695, -3.51599, 43.4726)
 
 [node name="DeepOcean" parent="." instance=ExtResource("2_8p12h")]
 transform = Transform3D(1, 0, 0, 0, 1.14258, 0, 0, 0, 1, 0, 0, 0)
@@ -142,6 +143,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Boat" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.168441, 0, 0.231431, 0, 0.286239, 0, -0.231431, 0, 0.168441, 21.5987, 0.309609, -15.1173)
+mesh = ExtResource("18_3k5tt")
+
+[node name="Boat2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.056009, 0, 0.280706, 0, 0.286239, 0, -0.280706, 0, 0.056009, -32.6896, 0.309609, 26.5108)
+mesh = ExtResource("18_3k5tt")
 
 [connection signal="timeout" from="AmbienceStuff/Timer" to="AmbienceStuff" method="_on_timer_timeout"]
 

@@ -1,0 +1,13 @@
+# Blender 4.0.2 MTL File: 'hacktues_models.blend'
+# www.blender.org
+
+newmtl boat
+Ns 73.318138
+Ka 0.263636 0.263636 0.263636
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Kd boat_diffuse.png
+map_refl boat_gloss.png
