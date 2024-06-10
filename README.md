@@ -6,14 +6,11 @@
 
 ## Screenshots
 
-![Gameplay Screenshot 1](path_to_screenshot1)
-*Caption for screenshot 1*
+![image](https://github.com/Al1002/hackTuesX/assets/84194378/d60320ea-eaeb-4101-940c-fcf9d4d69aa5)
+*The environment*
 
-![Gameplay Screenshot 2](path_to_screenshot2)
-*Caption for screenshot 2*
-
-![Gameplay Screenshot 3](path_to_screenshot3)
-*Caption for screenshot 3*
+![image](https://github.com/Al1002/hackTuesX/assets/84194378/5934aae4-50ba-4cff-b75d-50a92a44205f)
+*Atlantis ruins*
 
 ## Installation
 
